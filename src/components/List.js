@@ -1,7 +1,8 @@
-import React, { Component } from 'react'
+import React, { Component , Fragment} from 'react'
 import Product from './Product'
 import Title from './Title'
 import {store} from '../data'
+import {ProductConsumer} from "../context"
 
 export default class List extends Component {
     state ={
@@ -9,14 +10,23 @@ export default class List extends Component {
     }
 
     render() {
-        console.log(this.state.product)
         return (
-            <React.Fragment>
+            <Fragment>
                 <div className= "is-large is-primary">
                     <Title title = "Product List"/>
-        
                 </div>
-            </React.Fragment>
+                <div className= "columns">
+                    <div className= "column">
+                        <ProductConsumer>
+                            {hello => {
+                                console.log(hello)
+                            }}
+                        </ProductConsumer>
+
+                    </div>
+
+                </div>
+            </Fragment>
             
         )
     }
