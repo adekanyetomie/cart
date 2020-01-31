@@ -15,17 +15,12 @@ export default class List extends Component {
                 <div className= "is-large is-primary">
                     <Title title = "Product List"/>
                 </div>
-                <div className= "columns">
                     <div className= "column">
                         <ProductConsumer>
-                            {hello => {
-                                console.log(hello)
-                            }}
+                            {value=>{ return<h1>{value}</h1> }}
                         </ProductConsumer>
 
                     </div>
-
-                </div>
             </Fragment>
             
         )
